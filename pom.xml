@@ -51,7 +51,7 @@
     <properties>
         <version.java>1.8</version.java>
         <version.slf4j>1.7.30</version.slf4j>
-        <version.log4j>2.14.1</version.log4j>
+        <version.log4j2>2.14.1</version.log4j2>
         <version.junit>5.7.2</version.junit>
         <version.assertj>3.19.0</version.assertj>
         <version.mockito>3.11.0</version.mockito>
@@ -80,7 +80,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>${version.log4j}</version>
+            <version>${version.log4j2}</version>
             <scope>provided</scope>
         </dependency>
 
