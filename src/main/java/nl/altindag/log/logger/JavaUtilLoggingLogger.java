@@ -1,15 +1,38 @@
+/*
+ * Copyright 2021 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package nl.altindag.log.logger;
 
 import nl.altindag.log.Logger;
 
 import java.util.logging.Level;
 
+/**
+ * @author Hakan Altindag
+ */
 public final class JavaUtilLoggingLogger implements Logger {
 
     private final java.util.logging.Logger logger;
 
-    public JavaUtilLoggingLogger(String name) {
+    private JavaUtilLoggingLogger(String name) {
         logger = java.util.logging.Logger.getLogger(name);
+    }
+
+    public static Logger getLogger(String name) {
+        return new JavaUtilLoggingLogger(name);
     }
 
     @Override
@@ -23,11 +46,6 @@ public final class JavaUtilLoggingLogger implements Logger {
     }
 
     @Override
-    public void trace(String format, Object... arguments) {
-        logger.log(Level.FINEST, format, arguments);
-    }
-
-    @Override
     public void trace(String message, Throwable throwable) {
         logger.log(Level.FINEST, message, throwable);
     }
@@ -35,11 +53,6 @@ public final class JavaUtilLoggingLogger implements Logger {
     @Override
     public void debug(String message) {
         logger.log(Level.FINER, message);
-    }
-
-    @Override
-    public void debug(String format, Object... arguments) {
-        logger.log(Level.FINER, format, arguments);
     }
 
     @Override
@@ -53,11 +66,6 @@ public final class JavaUtilLoggingLogger implements Logger {
     }
 
     @Override
-    public void info(String format, Object... arguments) {
-        logger.log(Level.INFO, format, arguments);
-    }
-
-    @Override
     public void info(String message, Throwable throwable) {
         logger.log(Level.INFO, message, throwable);
     }
@@ -68,11 +76,6 @@ public final class JavaUtilLoggingLogger implements Logger {
     }
 
     @Override
-    public void warn(String format, Object... arguments) {
-        logger.log(Level.WARNING, format, arguments);
-    }
-
-    @Override
     public void warn(String message, Throwable throwable) {
         logger.log(Level.WARNING, message, throwable);
     }
@@ -80,11 +83,6 @@ public final class JavaUtilLoggingLogger implements Logger {
     @Override
     public void error(String message) {
         logger.log(Level.SEVERE, message);
-    }
-
-    @Override
-    public void error(String format, Object... arguments) {
-        logger.log(Level.SEVERE, format, arguments);
     }
 
     @Override

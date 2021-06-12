@@ -51,10 +51,12 @@
     <properties>
         <version.java>1.8</version.java>
         <version.slf4j>1.7.30</version.slf4j>
+        <version.log4j>2.14.1</version.log4j>
         <version.junit>5.7.2</version.junit>
         <version.assertj>3.19.0</version.assertj>
         <version.mockito>3.11.0</version.mockito>
         <version.log4j>1.2.17</version.log4j>
+        <version.logcaptor>2.6.1</version.logcaptor>
         <version.jacoco-maven-plugin>0.8.5</version.jacoco-maven-plugin>
         <version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
         <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
@@ -78,7 +80,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.14.1</version>
+            <version>${version.log4j}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -104,6 +106,12 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>${version.mockito}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.hakky54</groupId>
+            <artifactId>logcaptor</artifactId>
+            <version>${version.logcaptor}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
