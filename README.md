@@ -25,11 +25,11 @@
 ```
 ### Install with Gradle
 ```groovy
-testImplementation 'io.github.hakky54:yaslf4j:1.0.0'
+implementation 'io.github.hakky54:yaslf4j:1.0.0'
 ```
 ### Install with Scala SBT
 ```
-libraryDependencies += "io.github.hakky54" % "yaslf4j" % "1.0.0" % Test
+libraryDependencies += "io.github.hakky54" % "yaslf4j" % "1.0.0"
 ```
 ### Install with Apache Ivy
 ```xml
