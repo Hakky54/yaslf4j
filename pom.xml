@@ -50,13 +50,13 @@
 
     <properties>
         <version.java>1.8</version.java>
-        <version.slf4j>1.7.30</version.slf4j>
-        <version.log4j2>2.14.1</version.log4j2>
-        <version.junit>5.7.2</version.junit>
-        <version.assertj>3.19.0</version.assertj>
-        <version.mockito>3.11.0</version.mockito>
-        <version.log4j>1.2.17</version.log4j>
-        <version.logcaptor>2.6.1</version.logcaptor>
+        <version.slf4j>1.7.32</version.slf4j>
+        <version.log4j2>2.17.0</version.log4j2>
+        <version.junit>5.8.2</version.junit>
+        <version.assertj>3.21.0</version.assertj>
+        <version.mockito>4.1.0</version.mockito>
+        <version.log4j>1.2.19</version.log4j>
+        <version.logcaptor>2.7.7</version.logcaptor>
         <version.jacoco-maven-plugin>0.8.5</version.jacoco-maven-plugin>
         <version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
         <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
