@@ -19,7 +19,7 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/Hakky54/log-captor</url>
+        <url>https://github.com/Hakky54/yaslf4j</url>
         <connection>scm:git:git@github.com:Hakky54/yaslf4j.git</connection>
         <developerConnection>scm:git:git@github.com:Hakky54/yaslf4j.git</developerConnection>
         <tag>HEAD</tag>
