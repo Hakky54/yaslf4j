@@ -16,7 +16,6 @@
 package nl.altindag.log.logger;
 
 import nl.altindag.log.Logger;
-import nl.altindag.log.util.ClassLoaderUtils;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -112,10 +111,6 @@ public final class Slf4jLogger implements Logger {
     @Override
     public boolean isErrorEnabled() {
         return logger.isErrorEnabled();
-    }
-
-    public static boolean isApiAvailable() {
-        return ClassLoaderUtils.isClassPresent(org.slf4j.Logger.class.getName());
     }
 
 }
