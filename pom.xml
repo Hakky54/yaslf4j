@@ -50,13 +50,14 @@
 
     <properties>
         <version.java>1.8</version.java>
-        <version.slf4j>1.7.32</version.slf4j>
-        <version.log4j2>2.17.0</version.log4j2>
-        <version.junit>5.8.2</version.junit>
-        <version.assertj>3.21.0</version.assertj>
-        <version.mockito>4.1.0</version.mockito>
+        <version.slf4j>2.0.3</version.slf4j>
+        <version.log4j2>2.19.0</version.log4j2>
+        <version.junit>5.9.1</version.junit>
+        <version.assertj>3.23.1</version.assertj>
+        <version.mockito>4.8.1</version.mockito>
         <version.log4j>1.2.19</version.log4j>
-        <version.logcaptor>2.7.7</version.logcaptor>
+        <version.logcaptor>2.7.10</version.logcaptor>
+        <version.logback>1.3.4</version.logback>
         <version.jacoco-maven-plugin>0.8.5</version.jacoco-maven-plugin>
         <version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
         <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
@@ -114,6 +115,12 @@
             <groupId>io.github.hakky54</groupId>
             <artifactId>logcaptor</artifactId>
             <version>${version.logcaptor}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${version.logback}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

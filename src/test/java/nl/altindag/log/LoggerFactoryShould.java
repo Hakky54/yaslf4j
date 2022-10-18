@@ -20,10 +20,10 @@ import nl.altindag.log.logger.Log4j2Logger;
 import nl.altindag.log.logger.Slf4jLogger;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
-import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mockStatic;
 
 /**
  * @author Hakan Altindag
@@ -38,8 +38,8 @@ class LoggerFactoryShould {
 
     @Test
     void getLoggerForLog4j2IfSlf4jIsNotPresentOnTheClasspath() {
-        try (MockedStatic<Slf4jLogger> slf4jLoggerMockedStatic = Mockito.mockStatic(Slf4jLogger.class, InvocationOnMock::getMock)) {
-            slf4jLoggerMockedStatic.when(() -> Slf4jLogger.getLogger(Mockito.anyString())).thenThrow(new NoClassDefFoundError());
+        try (MockedStatic<Slf4jLogger> slf4jLoggerMockedStatic = mockStatic(Slf4jLogger.class)) {
+            slf4jLoggerMockedStatic.when(() -> Slf4jLogger.getLogger(anyString())).thenThrow(new NoClassDefFoundError());
 
             Logger logger = LoggerFactory.getLogger("nl.altindag.log");
             assertThat(logger).isInstanceOf(Log4j2Logger.class);
@@ -48,11 +48,11 @@ class LoggerFactoryShould {
 
     @Test
     void getLoggerForJavaUtilLoggingLoggerIfSlf4jAndLog4j2IsNotPresentOnTheClasspath() {
-        try (MockedStatic<Slf4jLogger> slf4jLoggerMockedStatic = Mockito.mockStatic(Slf4jLogger.class, InvocationOnMock::getMock);
-             MockedStatic<Log4j2Logger> log4j2LoggerMockedStatic = Mockito.mockStatic(Log4j2Logger.class, InvocationOnMock::getMock)) {
+        try (MockedStatic<Slf4jLogger> slf4jLoggerMockedStatic = mockStatic(Slf4jLogger.class);
+             MockedStatic<Log4j2Logger> log4j2LoggerMockedStatic = mockStatic(Log4j2Logger.class)) {
 
-            slf4jLoggerMockedStatic.when(() -> Slf4jLogger.getLogger(Mockito.anyString())).thenThrow(new NoClassDefFoundError());
-            log4j2LoggerMockedStatic.when(() -> Log4j2Logger.getLogger(Mockito.anyString())).thenThrow(new NoClassDefFoundError());
+            slf4jLoggerMockedStatic.when(() -> Slf4jLogger.getLogger(anyString())).thenThrow(new NoClassDefFoundError());
+            log4j2LoggerMockedStatic.when(() -> Log4j2Logger.getLogger(anyString())).thenThrow(new NoClassDefFoundError());
 
             Logger logger = LoggerFactory.getLogger(this.getClass());
             assertThat(logger).isInstanceOf(JavaUtilLoggingLogger.class);
