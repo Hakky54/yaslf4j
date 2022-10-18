@@ -37,14 +37,15 @@ public class LoggerFactory {
     }
 
     public static Logger getLogger(String name) {
-        try {
+        if (Slf4jLogger.isApiAvailable()) {
             return Slf4jLogger.getLogger(name);
-        } catch (NoClassDefFoundError ignored) {}
+        }
 
-        try {
+        if (Log4j2Logger.isApiAvailable()) {
             return Log4j2Logger.getLogger(name);
-        } catch (NoClassDefFoundError ignored) {}
+        }
 
         return JavaUtilLoggingLogger.getLogger(name);
     }
+
 }

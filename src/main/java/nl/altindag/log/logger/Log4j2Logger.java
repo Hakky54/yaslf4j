@@ -16,6 +16,7 @@
 package nl.altindag.log.logger;
 
 import nl.altindag.log.Logger;
+import nl.altindag.log.util.ClassLoaderUtils;
 import org.apache.logging.log4j.LogManager;
 
 /**
@@ -111,6 +112,10 @@ public final class Log4j2Logger implements Logger {
     @Override
     public boolean isErrorEnabled() {
         return logger.isErrorEnabled();
+    }
+
+    public static boolean isApiAvailable() {
+        return ClassLoaderUtils.isClassPresent(org.apache.logging.log4j.Logger.class.getName());
     }
 
 }
