@@ -4,7 +4,7 @@
 
     <groupId>io.github.hakky54</groupId>
     <artifactId>yaslf4j</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
 
     <name>yaslf4j</name>
     <description>Yet Another Simple Logging Facade for Java</description>
@@ -22,7 +22,7 @@
         <url>https://github.com/Hakky54/yaslf4j</url>
         <connection>scm:git:git@github.com:Hakky54/yaslf4j.git</connection>
         <developerConnection>scm:git:git@github.com:Hakky54/yaslf4j.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.0.5</tag>
     </scm>
 
     <developers>
