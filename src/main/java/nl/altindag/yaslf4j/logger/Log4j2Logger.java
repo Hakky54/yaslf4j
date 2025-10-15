@@ -13,24 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.log.logger;
+package nl.altindag.yaslf4j.logger;
 
-import nl.altindag.log.Logger;
-import org.slf4j.LoggerFactory;
+import nl.altindag.yaslf4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * @author Hakan Altindag
  */
-public final class Slf4jLogger implements Logger {
+public final class Log4j2Logger implements Logger {
 
-    private final org.slf4j.Logger logger;
+    private final org.apache.logging.log4j.Logger logger;
 
-    private Slf4jLogger(String name) {
-        logger = LoggerFactory.getLogger(name);
+    private Log4j2Logger(String name) {
+        logger = LogManager.getLogger(name);
     }
 
     public static Logger getLogger(String name) {
-        return new Slf4jLogger(name);
+        return new Log4j2Logger(name);
     }
 
     @Override

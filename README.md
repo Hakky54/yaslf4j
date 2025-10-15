@@ -8,7 +8,6 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.hakky54/yaslf4j/badge.svg)](https://mvnrepository.com/artifact/io.github.hakky54/yaslf4j)
 [![javadoc](https://javadoc.io/badge2/io.github.hakky54/yaslf4j/javadoc.svg)](https://javadoc.io/doc/io.github.hakky54/yaslf4j)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHakky54%2Fyaslf4j.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHakky54%2Fyaslf4j?ref=badge_shield)
-[![Join the chat at https://gitter.im/hakky54/yaslf4j](https://badges.gitter.im/hakky54/yaslf4j.svg)](https://gitter.im/hakky54/yaslf4j?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=io.github.hakky54%3Ayaslf4j)
 
@@ -20,20 +19,20 @@
 <dependency>
     <groupId>io.github.hakky54</groupId>
     <artifactId>yaslf4j</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.5</version>
 </dependency>
 ```
 ### Install with Gradle
 ```groovy
-implementation 'io.github.hakky54:yaslf4j:1.0.1'
+implementation 'io.github.hakky54:yaslf4j:1.0.5'
 ```
 ### Install with Scala SBT
 ```
-libraryDependencies += "io.github.hakky54" % "yaslf4j" % "1.0.1"
+libraryDependencies += "io.github.hakky54" % "yaslf4j" % "1.0.5"
 ```
 ### Install with Apache Ivy
 ```xml
-<dependency org="io.github.hakky54" name="yaslf4j" rev="1.0.1" />
+<dependency org="io.github.hakky54" name="yaslf4j" rev="1.0.5" />
 ```
 
 ## Table of contents
@@ -95,7 +94,6 @@ public class FooService {
 There are plenty of ways to contribute to this project:
 
 * Give it a star
-* Join the [Gitter room](https://gitter.im/hakky54/yaslf4j) and leave a feedback or help with answering users questions
 * Submit a PR
 
 ## License

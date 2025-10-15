@@ -37,38 +37,27 @@
         </developer>
     </developers>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
-        <version.java>1.8</version.java>
-        <version.slf4j>2.0.3</version.slf4j>
-        <version.log4j2>2.19.0</version.log4j2>
-        <version.junit>5.9.1</version.junit>
-        <version.assertj>3.23.1</version.assertj>
-        <version.mockito>4.8.1</version.mockito>
-        <version.log4j>1.2.19</version.log4j>
+        <version.slf4j>2.0.17</version.slf4j>
+        <version.log4j2>2.25.1</version.log4j2>
+
+        <version.junit>5.13.4</version.junit>
+        <version.assertj>3.27.4</version.assertj>
+        <version.mockito>4.11.0</version.mockito>
         <version.logcaptor>2.7.10</version.logcaptor>
         <version.logback>1.3.4</version.logback>
-        <version.jacoco-maven-plugin>0.8.5</version.jacoco-maven-plugin>
-        <version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
-        <version.maven-compiler-plugin>3.8.1</version.maven-compiler-plugin>
-        <version.maven-jar-plugin>3.2.0</version.maven-jar-plugin>
-        <version.maven-javadoc-plugin>3.1.1</version.maven-javadoc-plugin>
-        <version.maven-source-plugin>3.2.1</version.maven-source-plugin>
-        <version.maven-gpg-plugin>1.6</version.maven-gpg-plugin>
-        <version.maven-release-plugin>2.5.3</version.maven-release-plugin>
+
+        <version.jacoco-maven-plugin>0.8.13</version.jacoco-maven-plugin>
+        <version.maven-surefire-plugin>3.5.3</version.maven-surefire-plugin>
+        <version.maven-compiler-plugin>3.14.0</version.maven-compiler-plugin>
+        <version.maven-jar-plugin>3.4.2</version.maven-jar-plugin>
+        <version.maven-javadoc-plugin>3.11.3</version.maven-javadoc-plugin>
+        <version.maven-source-plugin>3.3.1</version.maven-source-plugin>
+        <version.maven-gpg-plugin>3.2.8</version.maven-gpg-plugin>
+        <version.maven-release-plugin>3.1.1</version.maven-release-plugin>
         <version.maven-scm-publish-plugin>3.0.0</version.maven-scm-publish-plugin>
-        <version.nexus-staging-maven-plugin>1.6.8</version.nexus-staging-maven-plugin>
-        <version.license-maven-plugin>4.2.rc3</version.license-maven-plugin>
+        <version.nexus-staging-maven-plugin>1.7.0</version.nexus-staging-maven-plugin>
+        <version.license-maven-plugin>4.6</version.license-maven-plugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <license.git.copyrightYears>2021</license.git.copyrightYears>
     </properties>
@@ -131,9 +120,28 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${version.maven-compiler-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                    </execution>
+                    <execution>
+                        <id>java8-compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <!-- recompile everything with Java 8 except the module-info.java -->
+                        <configuration>
+                            <release>8</release>
+                            <excludes>
+                                <exclude>module-info.java</exclude>
+                            </excludes>
+                        </configuration>
+                    </execution>
+                </executions>
                 <configuration>
-                    <source>${version.java}</source>
-                    <target>${version.java}</target>
+                    <release>11</release>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
 
@@ -144,7 +152,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Automatic-Module-Name>io.github.hakky54.yaslf4j</Automatic-Module-Name>
+                            <Automatic-Module-Name>nl.altindag.yaslf4j</Automatic-Module-Name>
                         </manifestEntries>
                     </archive>
                 </configuration>
@@ -175,6 +183,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${version.maven-surefire-plugin}</version>
                 <configuration>
+                    <useModulePath>false</useModulePath>
                     <includes>
                         <include>%regex[.*Should.*]</include>
                     </includes>
@@ -199,9 +208,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${version.maven-javadoc-plugin}</version>
-                <configuration>
-                    <source>${version.java}</source>
-                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -229,7 +235,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                    <nexusUrl>https://ossrh-staging-api.central.sonatype.com</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>

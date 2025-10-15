@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.log;
+package nl.altindag.yaslf4j;
 
-import nl.altindag.log.logger.JavaUtilLoggingLogger;
-import nl.altindag.log.logger.Log4j2Logger;
-import nl.altindag.log.logger.Slf4jLogger;
+import nl.altindag.yaslf4j.logger.JavaUtilLoggingLogger;
+import nl.altindag.yaslf4j.logger.Log4j2Logger;
+import nl.altindag.yaslf4j.logger.Slf4jLogger;
 
 /**
  *  The {@link LoggerFactory} will construct an instance of {@link Logger}
  *  which will be a wrapper containing the actual Logger. The wrapper logger will be created
  *  based on the available classes on the classpath. If SLF4J API is present it will construct
  *  a wrapper Logger with SLF4J Logger wrapped in it or else it will try Log4j2 and if that is not available
- *  at runtime it will fallback to java-util-logging logger.
+ *  at runtime it will fall back to java-util-logging logger.
  *
  * @author Hakan Altindag
  */

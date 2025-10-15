@@ -13,24 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.log.logger;
+package nl.altindag.yaslf4j.logger;
 
-import nl.altindag.log.Logger;
-import org.apache.logging.log4j.LogManager;
+import nl.altindag.yaslf4j.Logger;
+
+import java.util.logging.Level;
 
 /**
  * @author Hakan Altindag
  */
-public final class Log4j2Logger implements Logger {
+public final class JavaUtilLoggingLogger implements Logger {
 
-    private final org.apache.logging.log4j.Logger logger;
+    private final java.util.logging.Logger logger;
 
-    private Log4j2Logger(String name) {
-        logger = LogManager.getLogger(name);
+    private JavaUtilLoggingLogger(String name) {
+        logger = java.util.logging.Logger.getLogger(name);
     }
 
     public static Logger getLogger(String name) {
-        return new Log4j2Logger(name);
+        return new JavaUtilLoggingLogger(name);
     }
 
     @Override
@@ -40,77 +41,77 @@ public final class Log4j2Logger implements Logger {
 
     @Override
     public void trace(String message) {
-        logger.trace(message);
+        logger.log(Level.FINEST, message);
     }
 
     @Override
     public void trace(String message, Throwable throwable) {
-        logger.trace(message, throwable);
+        logger.log(Level.FINEST, message, throwable);
     }
 
     @Override
     public void debug(String message) {
-        logger.debug(message);
+        logger.log(Level.FINER, message);
     }
 
     @Override
     public void debug(String message, Throwable throwable) {
-        logger.debug(message, throwable);
+        logger.log(Level.FINER, message, throwable);
     }
 
     @Override
     public void info(String message) {
-        logger.info(message);
+        logger.log(Level.INFO, message);
     }
 
     @Override
     public void info(String message, Throwable throwable) {
-        logger.info(message, throwable);
+        logger.log(Level.INFO, message, throwable);
     }
 
     @Override
     public void warn(String message) {
-        logger.warn(message);
+        logger.log(Level.WARNING, message);
     }
 
     @Override
     public void warn(String message, Throwable throwable) {
-        logger.warn(message, throwable);
+        logger.log(Level.WARNING, message, throwable);
     }
 
     @Override
     public void error(String message) {
-        logger.error(message);
+        logger.log(Level.SEVERE, message);
     }
 
     @Override
     public void error(String message, Throwable throwable) {
-        logger.error(message, throwable);
+        logger.log(Level.SEVERE, message, throwable);
     }
 
     @Override
     public boolean isTraceEnabled() {
-        return logger.isTraceEnabled();
+        return logger.isLoggable(Level.FINEST);
     }
 
     @Override
     public boolean isDebugEnabled() {
-        return logger.isDebugEnabled();
+        return logger.isLoggable(Level.FINER);
     }
 
     @Override
     public boolean isInfoEnabled() {
-        return logger.isInfoEnabled();
+        return logger.isLoggable(Level.INFO);
     }
 
     @Override
     public boolean isWarnEnabled() {
-        return logger.isWarnEnabled();
+        return logger.isLoggable(Level.WARNING);
     }
 
     @Override
     public boolean isErrorEnabled() {
-        return logger.isErrorEnabled();
+        return logger.isLoggable(Level.SEVERE);
     }
 
 }

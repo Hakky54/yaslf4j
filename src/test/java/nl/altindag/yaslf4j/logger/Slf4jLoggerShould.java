@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.log.logger;
+package nl.altindag.yaslf4j.logger;
 
-import nl.altindag.log.Logger;
+import nl.altindag.yaslf4j.Logger;
 
 /**
  * @author Hakan Altindag
  */
-class JavaUtilLoggingLoggerShould extends BaseLoggerTestHelper {
+class Slf4jLoggerShould extends BaseLoggerTestHelper {
 
-    private final Logger logger = JavaUtilLoggingLogger.getLogger(LOGGER_NAME);
+    private final Logger logger = Slf4jLogger.getLogger(LOGGER_NAME);
 
     @Override
     Logger getLoggerImplementation() {
