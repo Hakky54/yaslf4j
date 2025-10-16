@@ -6,7 +6,7 @@
     <artifactId>yaslf4j</artifactId>
     <version>1.0.6-SNAPSHOT</version>
 
-    <name>yaslf4j</name>
+    <name>YASLF4J API</name>
     <description>Yet Another Simple Logging Facade for Java</description>
     <url>https://github.com/Hakky54/yaslf4j</url>
 
@@ -45,7 +45,7 @@
         <version.assertj>3.27.4</version.assertj>
         <version.mockito>4.11.0</version.mockito>
         <version.logcaptor>2.7.10</version.logcaptor>
-        <version.logback>1.3.4</version.logback>
+        <version.logback>1.3.15</version.logback>
 
         <version.jacoco-maven-plugin>0.8.13</version.jacoco-maven-plugin>
         <version.maven-surefire-plugin>3.5.3</version.maven-surefire-plugin>
