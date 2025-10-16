@@ -70,7 +70,8 @@ The same goes for Log4j2. So the end-user may provide a logging binding but is n
 ### Tested Java versions
 - Java 8
 - Java 11
-- Java 15
+- Java 17
+- Java 21
 
 # Usage
 ```java
