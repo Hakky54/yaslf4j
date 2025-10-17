@@ -75,8 +75,8 @@ The same goes for Log4j2. So the end-user may provide a logging binding but is n
 
 # Usage
 ```java
-import nl.altindag.log.Logger;
-import nl.altindag.log.LoggerFactory;
+import nl.altindag.sude.Logger;
+import nl.altindag.sude.LoggerFactory;
 
 public class FooService {
 
