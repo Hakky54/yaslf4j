@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.yaslf4j.logger;
+package nl.altindag.sude.logger;
 
-import nl.altindag.yaslf4j.Logger;
+import nl.altindag.sude.Logger;
 
 /**
  * @author Hakan Altindag

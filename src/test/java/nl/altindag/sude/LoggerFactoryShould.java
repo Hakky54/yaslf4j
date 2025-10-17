@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package nl.altindag.yaslf4j;
+package nl.altindag.sude;
 
-import nl.altindag.yaslf4j.logger.JavaUtilLoggingLogger;
-import nl.altindag.yaslf4j.logger.Log4j2Logger;
-import nl.altindag.yaslf4j.logger.Slf4jLogger;
+import nl.altindag.sude.logger.JavaUtilLoggingLogger;
+import nl.altindag.sude.logger.Log4j2Logger;
+import nl.altindag.sude.logger.Slf4jLogger;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 

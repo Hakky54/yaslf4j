@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.hakky54</groupId>
-    <artifactId>yaslf4j</artifactId>
+    <artifactId>sude</artifactId>
     <version>2.0.0-SNAPSHOT</version>
 
-    <name>YASLF4J API</name>
+    <name>Sude</name>
     <description>Yet Another Simple Logging Facade for Java</description>
-    <url>https://github.com/Hakky54/yaslf4j</url>
+    <url>https://github.com/Hakky54/sude</url>
 
     <licenses>
         <license>
@@ -19,9 +19,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/Hakky54/yaslf4j</url>
-        <connection>scm:git:git@github.com:Hakky54/yaslf4j.git</connection>
-        <developerConnection>scm:git:git@github.com:Hakky54/yaslf4j.git</developerConnection>
+        <url>https://github.com/Hakky54/sude</url>
+        <connection>scm:git:git@github.com:Hakky54/sude.git</connection>
+        <developerConnection>scm:git:git@github.com:Hakky54/sude.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
@@ -37,22 +37,15 @@
         </developer>
     </developers>
 
-    <distributionManagement>
-        <relocation>
-            <artifactId>sude</artifactId>
-            <version>2.0.0</version>
-        </relocation>
-    </distributionManagement>
-
     <properties>
         <version.slf4j>2.0.17</version.slf4j>
-        <version.log4j2>2.25.1</version.log4j2>
+        <version.log4j2>2.25.2</version.log4j2>
 
         <version.junit>5.13.4</version.junit>
-        <version.assertj>3.27.4</version.assertj>
-        <version.mockito>4.11.0</version.mockito>
-        <version.logcaptor>2.7.10</version.logcaptor>
-        <version.logback>1.3.15</version.logback>
+        <version.assertj>3.27.6</version.assertj>
+        <version.mockito>5.20.0</version.mockito>
+        <version.logcaptor>2.12.1</version.logcaptor>
+        <version.logback>1.5.19</version.logback>
 
         <version.jacoco-maven-plugin>0.8.13</version.jacoco-maven-plugin>
         <version.maven-surefire-plugin>3.5.3</version.maven-surefire-plugin>
@@ -159,7 +152,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Automatic-Module-Name>nl.altindag.yaslf4j</Automatic-Module-Name>
+                            <Automatic-Module-Name>nl.altindag.sude</Automatic-Module-Name>
                         </manifestEntries>
                     </archive>
                 </configuration>
@@ -251,8 +244,10 @@
                 <artifactId>license-maven-plugin</artifactId>
                 <version>${version.license-maven-plugin}</version>
                 <configuration>
-                    <inlineHeader>
-                        <![CDATA[
+                    <licenseSets>
+                        <licenseSet>
+                            <inlineHeader>
+                                <![CDATA[
 Copyright ${license.git.copyrightYears} Thunderberry.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -267,17 +262,19 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ]]>
-                    </inlineHeader>
-                    <excludes>
-                        <exclude>.gitignore</exclude>
-                        <exclude>release.sh</exclude>
-                        <exclude>**/.idea/**</exclude>
-                        <exclude>**/target/**</exclude>
-                        <exclude>**/resources/**</exclude>
-                        <exclude>LICENSE</exclude>
-                        <exclude>**/*.md</exclude>
-                        <exclude>**/*.xml</exclude>
-                    </excludes>
+                            </inlineHeader>
+                            <excludes>
+                                <exclude>.gitignore</exclude>
+                                <exclude>release.sh</exclude>
+                                <exclude>**/.idea/**</exclude>
+                                <exclude>**/target/**</exclude>
+                                <exclude>**/resources/**</exclude>
+                                <exclude>LICENSE</exclude>
+                                <exclude>**/*.md</exclude>
+                                <exclude>**/*.xml</exclude>
+                            </excludes>
+                        </licenseSet>
+                    </licenseSets>
                     <strictCheck>true</strictCheck>
                     <mapping>
                         <java>SLASHSTAR_STYLE</java>

@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module nl.altindag.yaslf4j {
+module nl.altindag.sude {
 
     requires org.slf4j;
     requires org.apache.logging.log4j;
     requires transitive java.logging;
 
-    exports  nl.altindag.yaslf4j;
+    exports  nl.altindag.sude;
 
 }
