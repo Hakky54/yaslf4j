@@ -19,20 +19,20 @@
 <dependency>
     <groupId>io.github.hakky54</groupId>
     <artifactId>sude</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.2</version>
 </dependency>
 ```
 ### Install with Gradle
 ```groovy
-implementation 'io.github.hakky54:sude:2.0.0'
+implementation 'io.github.hakky54:sude:2.0.2'
 ```
 ### Install with Scala SBT
 ```
-libraryDependencies += "io.github.hakky54" % "sude" % "2.0.0"
+libraryDependencies += "io.github.hakky54" % "sude" % "2.0.2"
 ```
 ### Install with Apache Ivy
 ```xml
-<dependency org="io.github.hakky54" name="sude" rev="2.0.0" />
+<dependency org="io.github.hakky54" name="sude" rev="2.0.2" />
 ```
 
 ## Table of contents
