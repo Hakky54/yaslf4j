@@ -15,8 +15,8 @@
  */
 module nl.altindag.yaslf4j {
 
-    requires static org.slf4j;
-    requires static org.apache.logging.log4j;
+    requires org.slf4j;
+    requires org.apache.logging.log4j;
     requires transitive java.logging;
 
     exports  nl.altindag.yaslf4j;
