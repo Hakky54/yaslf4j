@@ -28,7 +28,7 @@ import nl.altindag.sude.logger.Slf4jLogger;
  *
  * @author Hakan Altindag
  */
-public class LoggerFactory {
+public final class LoggerFactory {
 
     private LoggerFactory() {}
 
